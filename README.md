@@ -27,10 +27,10 @@
   - `[5, 'Kiev', true, { city: 'Beijing' }, a => ++a ].map(x => typeof(x));`
 - [Скалярные типы / Scalar Types](https://github.com/HowProgrammingWorks/DataTypes)
   - примитивные типа данных, передаваемые по значению, а не по ссылке
-  - Наверно: `Number, String, Boolean`
+  - например: `Number, String, Boolean`
 - [Ссылочные типы / Reference](https://github.com/HowProgrammingWorks/DataTypes)
   - типы данных, передаваемые по ссылке, а не по значению
-  - Наверно: `Object, Function, Array`
+  - например: `Object, Function, Array`
 - [Объект / Object](https://github.com/HowProgrammingWorks/DataTypes)
   - структура данных, содержащая состояние и методы, связанные с этим состоянием
   - объект может быть создан как литерал `{}` или экземпляр класса
@@ -44,7 +44,7 @@
   - `const rect = { a: { x: -50, y: -50}, b: { x: 100, y: 150 } };`
   - `const cities = new Array(1000);`
   - `const cities = ['Tehran', 'Kiev', 'Yalta', 'Beijing', 'Potsdam', 'London'];`
-- Класс / Class *
+- Класс / Class
   - программная абстракция, обобщающая свойства и методы, состояние и поведение
   своих экземпляров
   - `class Point { constructor(x, y) { this.x = x; this.y = y; } }`
@@ -55,20 +55,20 @@
   ищутся свойства, пока не будут найдены или пока не будет достигнут конец)
   - шаблон, который клонируется во время инстанциирования
 - Флаг / Flag
-  - `let flagName = false;`
   - Логическое значение, определяющее состояние чего-либо, например, признак
   закрытия соединения, признак завершения поиска по структуре данных и т.д.
+  - `let flagName = false;`
 - [Cтруктуры данных](https://github.com/HowProgrammingWorks/DataStructures)
 - Массив / Array
   - коллекция эллементов, доступ к которым осуществляется по индексам
   - `const cities = ['Tehran', 'Yalta', 'Potsdam'];`
 - [Функция](https://github.com/HowProgrammingWorks/Function)
-  - Определения
-    - Функциональное программирование: отображение или преобразование, элементов
+  - определения
+    - функциональное программирование: отображение или преобразование, элементов
     одного множества в элементы другого множества
-    - Императивное программирование: ссылка на блок операторов (не обяхательно
+    - императивное программирование: ссылка на блок операторов (не обяхательно
     именованный), реализующий последовательность действий
-    - Обобщенное определение: выражение или блок операторов имеющий имя или
+    - обобщенное определение: выражение или блок операторов имеющий имя или
     анонимный, преобразующий аргументы в результаты или изменяющий состояние
     контекстов или объектов
   - [Контекст](https://github.com/HowProgrammingWorks/Function)
@@ -76,13 +76,13 @@
   - Объявление функции / Function definition
     - `function max(a, b) { return a + b; }`
   - Функциональное выражение / Function expression
-    - Функциональное выражение с именованной функцией / Named function expression
+    - функциональное выражение с именованной функцией / Named function expression
       - `const max = function max(a, b) { return a + b; };`
-    - Анонимное функциональное выражение / Anonymous function expression
+    - анонимное функциональное выражение / Anonymous function expression
       - `const max = function(a, b) { return a + b; };`
-    - Лямбда функция / Lambda function
+    - лямбда функция / Lambda function
       - `const max = (a, b) => { return a + b; };`
-    - Лябмда выражение, Функция-стрелка / Lambda expression, Arrow function
+    - лябмда выражение, Функция-стрелка / Lambda expression, Arrow function
       - `const max = (a, b) => (a + b);`
   - [Чистая функция / Pure Function](https://github.com/HowProgrammingWorks/Function)
     - функция, вычисляющая результат только на основе аргументов, не имеющая
@@ -115,66 +115,68 @@
     - `const result = curry((a, b, c) => (a + b + c))(1, 2)(3);`
   - [Побочные эффекты / Side effects](https://github.com/HowProgrammingWorks/Function)
   - [Функция высшего порядка / Higher-order Function](https://github.com/HowProgrammingWorks/HigherOrderFunction)
-    - Если функция только в аргументах, то это колбек
-    - Если функция только в результате, то это фабрика функций
-      - !!! Если в аргументах f, результат f, но не обертка
-    - Если функция в аргументах и в результате, то это обертка
-    - !!! фабрика конструкторов
+    - если функция только в аргументах, то это колбек
+    - если функция только в результате, то это фабрика функций
+    - если функция в результате является измененной функцией из аргументов, то это обертка
+    - если функция в результате не связана с функцией из аргументов
+    - если на выходе функция-конструктор, то это фабрика конструкторов
   - Функциональное наследование / Functional Inheritance
-    - При помощи: замыканий, ч.п., какрирования, лямбд
+    - при помощи: замыканий, ч.п., какрирования, лямбд
 - [Метод / Method](https://github.com/HowProgrammingWorks/Function)
+  - функция, связанная с объектным контекстом или программным интерфейсом
   - `{ a: 10, b: 10, sum() { return this.a + this.b; } }`
-  - Функция, связанная с объектным контекстом или программным интерфейсом
 - [Обертка / Wrapper](https://github.com/HowProgrammingWorks/Wrapper)
   - функция, которая оборачивает другую функцию (иногда объект, интерфейс или
   функциональный объект), добавляя ему дополнительное поведение
   - можно обернуть целый API интерфейс и даже асинхронную функцию вместе с
   колбеками (если известен контракт)
 - Интерфейс / Interface
-  - Набор методов (функций) объединенных или общим объектным контекстом или
+  - набор методов (функций) объединенных или общим объектным контекстом или
   применением к структурам данных одной предметной области т.е. смыслом (API)
-  - Способ спецификации контракта, по которому связаны программные компоненты
+  - способ определдения (спецификации) контракта, по которому связаны
+  программные компоненты
   - Набор методов с их именами, аргументами и типами аргументов
 - Программный интерфейс / Application Interface, API
-  - Интерфейс программных компонентов: модулей, слоев абстракции, приложений
-- [Синглтон / Singleton](https://github.com/HowProgrammingWorks/Singleton) *
-  - Шаблон проектирования, предполагающий, что в одном пространстве имен
+  - интерфейс программных компонентов: модулей, слоев абстракции, приложений
+- [Синглтон / Singleton](https://github.com/HowProgrammingWorks/Singleton)
+  - шаблон проектирования, предполагающий, что в одном пространстве имен
   (процессе, приложении, базе данных) будет только один экземпляр класса
   (или просто один подобный объект) к которому можно обратиться по определенному
   (известному) имени
 - [Функция обратного вызова, колбек / Callback](https://github.com/HowProgrammingWorks/Callbacks)
-  - Функция передаваемая в качестве аргумента в другую функцию (или метод)
+  - функция передаваемая в качестве аргумента в другую функцию (или метод)
   для того, чтобы быть вызванной для возврата значения, ошибки или уведомления
-  - Функции обратного вызова имеют подтипы:
-    - Один раз вызываемые (чаще всего)
+  - функции обратного вызова имеют подтипы:
+    - один раз вызываемые (чаще всего)
     - [Событие / Event](https://github.com/HowProgrammingWorks/Callbacks)
     - [Лисенер / Listener](https://github.com/HowProgrammingWorks/Callbacks)
 - [Итерирование / Iteration](https://github.com/HowProgrammingWorks/Iteration)
-  - Многократное повторение одного блока кода или одной функции над различными
+  - многократное повторение одного блока кода или одной функции над различными
   данными: элементами массивов, множдеств, списков, коллекций и различными
   значениями переменной цикла
 - [Итератор / Iterator](https://github.com/HowProgrammingWorks/Iteration)
-  - Интерфейс доступа к элементам коллекции: массива, множества, списка
+  - интерфейс доступа к элементам коллекции: массива, множества, списка
 - [Цикл / Loop](https://github.com/HowProgrammingWorks/Iteration)
-  - Многократное исполнение блока операторов
+  - многократное исполнение блока операторов
 - [Условие / Conditional statements](https://github.com/HowProgrammingWorks/Conditional)
-  - Синтаксическая конструкция, позволяющая выполнить разные действия или
+  - синтаксическая конструкция, позволяющая выполнить разные действия или
   возвращающая разные значения (тернарный оператор) в зависимости от логического
   выражения (возвращающего true или false)
 - [Строка / String](https://github.com/HowProgrammingWorks/String)
-  - Последовательность символов (в большинстве языков к каждому символу можно
+  - последовательность символов (в большинстве языков к каждому символу можно
   обратиться через синтаксис доступа к элементам массива, например, квадратные
   скобки)
-- [Коллекция / Collection](https://github.com/HowProgrammingWorks/Collections) *
-  - Структура данных, служащая для хранения набора значений и предоставляющая
+- [Коллекция / Collection](https://github.com/HowProgrammingWorks/Collections)
+  - структура данных, служащая для хранения набора значений и предоставляющая
   доступ к ним по индексам или ключам
-- [Множество / Set](https://github.com/HowProgrammingWorks/Set) *
-  - Структура данных, реализующая математическое "множество"
-  - Структура данных, служащая для хранения одногодного набора значений, которые
+- [Множество / Set](https://github.com/HowProgrammingWorks/Set)
+  - структура данных, реализующая математическое "множество"
+  - структура данных, служащая для хранения одногодного набора значений, которые
   не имеют индексов или ключей (но внутри структуры данных они должны иметь
   порядок, например, индекс в массиве, однако, множество абстрагирует нас от
   этой особенности реализации)
 - [Ключ-значение, Хешмап / Map, Key-value](https://github.com/HowProgrammingWorks/KeyValue)
+  - [класс `Map`](https://github.com/HowProgrammingWorks/Map)
 - [Список / List](https://github.com/HowProgrammingWorks/LinkedList) *
 - [Дерево](https://github.com/HowProgrammingWorks/TreeNode) *
 - [Граф / Graph](https://github.com/HowProgrammingWorks/DirectedGraph) *
@@ -183,24 +185,31 @@
 - [Буфер / Buffer](https://github.com/HowProgrammingWorks/Buffers) *
 - [Сокет / Socket](https://github.com/HowProgrammingWorks/Socket) *
 - [Дескриптор / Descriptor](https://github.com/HowProgrammingWorks/Files) *
-- Состояние / State *
+- Состояние / State
+  - совокупность данных программного компонента (переменных и структур данных),
+  определяющие его поведение и реакцию на операции с ним
 - Кэш, Кэширование / Cache *
 - Хэш, Хэширование / Hashing *
 - [Функциональный объект](https://github.com/HowProgrammingWorks/Functor)
   - [Функтор / Functor](https://github.com/HowProgrammingWorks/Functor)
-    - Рекурсивное замыкание / Recursive closure
-    - Объект функционального типа, хранящий в себе защищенное значение и
+    - функтор - это рекурсивное замыкание / recursive closure
+    - объект функционального типа, хранящий в себе защищенное значение и
     позволяющий отобразить это значение в другой функтор через функцию
   - [Аппликативный функтор](https://github.com/HowProgrammingWorks/Functor) *
   - Монада / Monad *
-- [Мемоизация / Memoization](https://github.com/HowProgrammingWorks/Memoization) *
-- [Примесь / Mixin](https://github.com/HowProgrammingWorks/Mixin) *
-  - Добавление свойств, методов или поведения к объекту после его
+- [Мемоизация / Memoization](https://github.com/HowProgrammingWorks/Memoization)
+  - обертка функции, сохраняющая результаты выполнения функции для
+  предотвращения повторных вычислений
+- [Примесь / Mixin](https://github.com/HowProgrammingWorks/Mixin)
+  - добавление свойств, методов или поведения к объекту после его
   инстанциирования (создания)
-- Декоратор / Decorator *
-- [Наследование / Inheritance](https://github.com/HowProgrammingWorks/Function) *
-- Множественное наследование / Multiple Inheritance *
-- Непрямое наследование / Indirect Inheritance *
+  - `Object.assign(target, { field1, field2 }, { field3 });`
+- Декоратор / Decorator
+  - шаблон оборачивания объектов или функций для добавлением новой
+  функциональности при помощи специального синтаксиса
+- [Наследование / Inheritance](https://github.com/HowProgrammingWorks/Inheritance)
+- [Множественное наследование / Multiple Inheritance](https://github.com/HowProgrammingWorks/Inheritance)
+- [Непрямое наследование / Indirect Inheritance](https://github.com/HowProgrammingWorks/Inheritance)
 - [Генератор / Generator](https://github.com/HowProgrammingWorks/Generator) *
 - [Синхронные операции](https://github.com/HowProgrammingWorks/AsynchronousProgramming) *
 - [Асинхронные операции](https://github.com/HowProgrammingWorks/AsynchronousProgramming) *
@@ -257,7 +266,15 @@
   определяет порядок связи всех частей (композицию)
 - [Ленивость / Lazy](https://github.com/HowProgrammingWorks/Lazy)
 - [Обработка ошибок / Error handling](https://github.com/HowProgrammingWorks/Errors)
-- Фабрика / Factory
+- [Фабрика / Factory](https://github.com/HowProgrammingWorks/Factory)
+  - функция или метод для инстациирования объектов, функций, структур данных и
+  любых других программных абстракций, например, экземпляров класса в обход
+  конструктора или функциональных объектов
+- Объектный Пул / [Object Pool](https://github.com/HowProgrammingWorks/Pool) *
+  - Множество заранее инстанциированных объектов (или массивов, сокетов, буферов,
+  структур данных и других программных абстракций) из которого мы можем их брать
+  инициализированные экземпляры (вместо инстанциирования новых) и отдавать их
+  после использования
 
 ## Расширенные понятия
 
@@ -287,7 +304,7 @@
 - [Измерение производительности / Benchmarking](https://github.com/HowProgrammingWorks/Benchmark)
 - [Интерфейс командной строки / CLI, Command Line Interface and Console](https://github.com/HowProgrammingWorks/CommandLine)
 - [Мониторинг файловой системы / File System Watching](https://github.com/HowProgrammingWorks/Files)
-- Метаданные
+- Метаданные / Metadata
 - Протокол
 
 ## Парадигмы программирования
